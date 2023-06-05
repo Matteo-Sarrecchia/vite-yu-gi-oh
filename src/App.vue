@@ -18,7 +18,7 @@ export default {
     getCards() {
       axios.get(store.apiURL)
         .then(res => {
-          store.cardList = res.data
+          store.cardList = res.data.data
         })
         .catch(err => {
           console.log(err)

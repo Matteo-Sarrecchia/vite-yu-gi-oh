@@ -6,7 +6,7 @@ export default {
     components: {
         AppCard
     },
-    data (){
+    data() {
         return {
             store
         }
@@ -17,7 +17,8 @@ export default {
 <template>
     <main>
         <div class="container">
-            <AppCard v-for="card in store.cardList"/>
+            <AppCard v-for="card in store.cardList" 
+            :details="card"/>
         </div>
     </main>
 </template>
@@ -36,7 +37,8 @@ main {
         margin: 20px auto;
         border: 1px solid black;
         background-color: white;
-
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 </style>
