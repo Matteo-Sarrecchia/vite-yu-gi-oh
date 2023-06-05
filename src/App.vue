@@ -1,15 +1,16 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from "axios"
+import AppHeader from './components/AppHeader.vue'
 
 export default {
   components: {
-    HelloWorld
+    AppHeader
   }
 }
 </script>
 
 <template>
-  <HelloWorld />
+  <AppHeader />
 </template>
 
 <style lang="scss">
