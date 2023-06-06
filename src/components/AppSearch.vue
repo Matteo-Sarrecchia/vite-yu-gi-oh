@@ -2,8 +2,10 @@
 import { store } from '../store';
 export default {
     name: "AppSearch",
-    props: {
-        details: Object
+    data() {
+        return {
+            store
+        }
     }
 }
 
@@ -12,11 +14,12 @@ export default {
 <template>
     <section class="search">
         <div class="container">
-            <select class="form-select" aria-label="Default select example">
-                <option value="0">All</option>
-                <option value="1" @click.prevent="$emit('mysearch')">Alien</option>
-                <option value="2"></option>
-
+            <select v-model="store.searchText" class="form-select" aria-label="Default select example">
+                <option value="All">All</option>
+                <!-- <option value="1" @click.prevent="$emit('mysearch')">Alien</option> -->
+                <option v-for="elm in store.archetypeList" :value="elm.archetype_name" @click.prevent="$emit('mysearch')">
+                    {{ elm.archetype_name }}
+                </option>
             </select>
         </div>
     </section>

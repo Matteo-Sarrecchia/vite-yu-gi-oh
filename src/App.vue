@@ -21,14 +21,25 @@ export default {
 
       let myUrl = store.apiURL;
 
-      if (store.searchText === "Alien") {
+      if (store.searchText !== "All") {
         myUrl += `&${store.apiNameParameter}=${store.searchText}`
-      }
 
-      axios.get(store.apiURL)
+      } else myUrl
+
+      axios.get(myUrl)
         .then(res => {
           store.cardList = res.data.data
-          console.log("ok");
+          console.log(res.data.data);
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+    getArchetype() {
+
+      axios.get(store.archetypeApiURL)
+        .then(res => {
+          store.archetypeList = res.data
         })
         .catch(err => {
           console.log(err)
@@ -37,12 +48,14 @@ export default {
   },
   created() {
     this.getCards();
+    this.getArchetype();
   }
 }
 </script>
 
 <template>
   <AppHeader />
+  <!-- <AppSearch @mysearch="getCards" /> -->
   <AppSearch @mysearch="getCards" />
   <AppMain />
 </template>
