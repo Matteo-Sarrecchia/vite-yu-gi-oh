@@ -5,11 +5,12 @@ import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
 import AppSearch from './components/AppSearch.vue'
 
+
 export default {
   components: {
     AppHeader,
     AppMain,
-    AppSearch
+    AppSearch,
   },
   data() {
     return {
@@ -55,7 +56,6 @@ export default {
 
 <template>
   <AppHeader />
-  <!-- <AppSearch @mysearch="getCards" /> -->
   <AppSearch @mysearch="getCards" />
   <AppMain />
 </template>

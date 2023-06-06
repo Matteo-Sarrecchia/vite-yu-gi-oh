@@ -1,7 +1,11 @@
 <script>
 import { store } from '../store';
+import AppResult from './AppResult.vue'
 export default {
     name: "AppSearch",
+    components: {
+        AppResult
+    },
     data() {
         return {
             store
@@ -21,6 +25,11 @@ export default {
                     {{ elm.archetype_name }}
                 </option>
             </select>
+            <div class="result">
+                <span>Found</span>
+                <AppResult />
+                <span>cards</span>
+            </div>
         </div>
     </section>
 </template>
@@ -35,9 +44,26 @@ export default {
         width: 80%;
         margin: 0 auto;
         padding-top: 20px;
+        display: flex;
 
         select {
             width: 30%;
+        }
+
+        .result {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            margin-left: 50px;
+            border-radius: 15px;
+
+            span {
+                padding: 0 10px;
+            }
         }
     }
 
