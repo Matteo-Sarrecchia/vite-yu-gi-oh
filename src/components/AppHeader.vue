@@ -17,7 +17,6 @@ export default {
 
 header {
     display: flex;
-    border: 1px solid black;
     padding: 10px;
 
     img {

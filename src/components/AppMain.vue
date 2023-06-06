@@ -1,10 +1,12 @@
 <script>
 import { store } from '../store';
 import AppCard from './AppCard.vue';
+import AppSearch from './AppSearch.vue';
 export default {
     name: "AppMain",
     components: {
-        AppCard
+        AppCard,
+        AppSearch
     },
     data() {
         return {
@@ -17,8 +19,7 @@ export default {
 <template>
     <main>
         <div class="container">
-            <AppCard v-for="card in store.cardList" 
-            :details="card"/>
+            <AppCard v-for="card in store.cardList" :details="card" />
         </div>
     </main>
 </template>
@@ -28,8 +29,7 @@ export default {
 
 main {
     display: flex;
-    border: 1px solid black;
-    background-color: brown;
+    background-color: #D48F38;
     min-height: 100px;
 
     .container {
