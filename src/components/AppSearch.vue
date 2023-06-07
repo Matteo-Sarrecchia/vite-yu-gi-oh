@@ -18,10 +18,11 @@ export default {
 <template>
     <section class="search">
         <div class="container">
-            <select v-model="store.searchText" class="form-select" aria-label="Default select example">
+            <select v-model="store.searchText" class="form-select" aria-label="Default select example"
+                @change="$emit('mysearch')">
                 <option value="All">All</option>
                 <!-- <option value="1" @click.prevent="$emit('mysearch')">Alien</option> -->
-                <option v-for="elm in store.archetypeList" :value="elm.archetype_name" @click.prevent="$emit('mysearch')">
+                <option v-for="elm in store.archetypeList" :value="elm.archetype_name">
                     {{ elm.archetype_name }}
                 </option>
             </select>

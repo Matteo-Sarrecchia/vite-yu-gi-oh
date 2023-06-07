@@ -24,8 +24,8 @@ export default {
 
       if (store.searchText !== "All") {
         myUrl += `&${store.apiNameParameter}=${store.searchText}`
-
-      } else myUrl
+        console.log(myUrl);
+      }
 
       axios.get(myUrl)
         .then(res => {
